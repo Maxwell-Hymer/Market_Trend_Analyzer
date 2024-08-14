@@ -6,11 +6,9 @@ File Name: Stock_Code_Lib
 ================================================================================
 
 A collection of methods for accessing stock symbols and their corresponding data
-
 .. moduleauthor:: Maxwell Hymer <maxhymertime@gmail.com>
 .. moduleversion:: 1.0
-.. date:: 2024-08-11
-
+.. date:: 2024-08-12
 '''
 
 import yfinance as yf
@@ -47,8 +45,8 @@ def find_stock_url(stock_name: str):
              or "Invalid Ticker Symbol" if the input is invalid
     '''
     
-    url_format = "https://finance.yahoo.com/quote/{}/history/" # constant
-    caps_regex = r'^[A-Z]+$' # constant
+    url_format = "https://finance.yahoo.com/quote/{}/history/" # constant  <-
+    caps_regex = r'^[A-Z]+$' # constant  <-
     
     if re.fullmatch(caps_regex, stock_name):
         # Replaces {} with stock name ex: "https://finance.yahoo.com/quote/{stock_name}/history/"
@@ -74,7 +72,7 @@ def get_stock_snapshot (stock_name: str):
         returns a DataFrame with the latest values.
     '''   
     stock = yf.Ticker(stock_name)
-    data = stock.history(period="6mo") # set this as a constant
+    data = stock.history(period="6mo") # set this as a constant  <-
     
     # Calculate the moving averages
     ma21 = data['Close'].rolling(window=21).mean().iloc[-1]
