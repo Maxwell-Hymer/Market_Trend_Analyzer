@@ -6,7 +6,7 @@ Stock Grader is a Python program that utilizes the yfinance library to pull rele
 
 Features:
 Retrieves real-time stock data using yfinance
-Calculates a grade based on various metrics, including [list specific metrics, e.g. P/E ratio, dividend yield, etc.]
+Calculates a grade based on various metrics, including [Close, MA21, MA50, MA10, SMA150, ADL, etc.]
 Provides a simple and easy-to-understand grading system, with higher grades indicating a better opportunity to buy
 
 Development Status:
